@@ -6,6 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using savy.data.Contexts;
+using savy.contracts.Repository;
+using savy.logics.Managers;
+using savy.logics.Validators;
+using savy.Contracts.Validators;
+using savy.logistics.Handlers;
+using savy.contracts.Handlers;
 
 namespace savy.Web.Client
 {
@@ -22,8 +29,10 @@ namespace savy.Web.Client
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            
-
+            services.AddDbContext<savyDbContext>();
+            services.AddTransient<ILogger, Logger>();
+            services.AddTransient<IValidator<Product>, ProductValidator>();
+            services.AddTransient<IExceptionHandler, ExceptionHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
