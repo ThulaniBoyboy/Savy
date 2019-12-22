@@ -11,6 +11,6 @@ namespace savy.contracts.Factories
         Task<bool> CreateAsync(T entity);
         Task<T> GetAsync(int id);
         Task<bool> RemoveAsync(int id);
-        Task<ICollection<T>> GetAsync();
+        Task<ICollection<T>> GetAllAsync();
     }
 }
