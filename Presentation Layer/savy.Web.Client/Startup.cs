@@ -14,7 +14,7 @@ using savy.Contracts.Validators;
 using savy.logics.Handlers;
 using savy.contracts.Handlers;
 using savy.contracts.Factories;
-using savy.logics.Factories
+using savy.logics.Factories;
 
 namespace savy.Web.Client
 {

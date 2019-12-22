@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-using savy.domain.Entities.Catalog
+using savy.domain.Entities.Catalog;
 
 namespace savy.data.Contexts
 {
@@ -13,9 +13,9 @@ namespace savy.data.Contexts
 
         public Dbset<Product> products { get; set; }
 
-        proteted override void OnConfiguring(DbContextOptionsBuilder builder)
+        protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            //assign connection string
+            //assign connection string  override void
             var conn = @"connection string";
             builder.UseSqlServer(conn);
         }
