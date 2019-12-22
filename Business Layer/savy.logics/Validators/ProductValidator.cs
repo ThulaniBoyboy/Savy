@@ -10,7 +10,7 @@ namespace savy.logics.Validators
     {
         public bool isValid(Product entity)
         {
-           return (!string.IsNullOrEmpty(entity.Name)) && entity.Price > 0 %% (string.IsNullOrEmpty(entity.Description));
+           return (!string.IsNullOrEmpty(entity.Name)) && entity.Price > 0 %% (!string.IsNullOrEmpty(entity.Description));
         }
     }
 }
