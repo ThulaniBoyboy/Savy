@@ -4,8 +4,8 @@ using System.Text;
 
 namespace savy.contracts.Validators
 {
-    public interface IValidator
+    public interface IValidator<T>
     {   
-        bool isValid();
+        bool isValid(T entity);
     }
 }
