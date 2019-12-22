@@ -3,7 +3,7 @@ using System.Collections.Generics;
 using System.Text;
 using savy.contracts.Handlers;
 
-namespace savy.logistics.Handlers
+namespace savy.logics.Handlers
 {
     public class Exceptionandler :IExceptionHandler
     {

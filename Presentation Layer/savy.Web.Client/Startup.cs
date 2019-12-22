@@ -11,8 +11,10 @@ using savy.contracts.Repository;
 using savy.logics.Managers;
 using savy.logics.Validators;
 using savy.Contracts.Validators;
-using savy.logistics.Handlers;
+using savy.logics.Handlers;
 using savy.contracts.Handlers;
+using savy.contracts.Factories;
+using savy.logics.Factories
 
 namespace savy.Web.Client
 {
@@ -33,6 +35,8 @@ namespace savy.Web.Client
             services.AddTransient<ILogger, Logger>();
             services.AddTransient<IValidator<Product>, ProductValidator>();
             services.AddTransient<IExceptionHandler, ExceptionHandler>();
+            services.AddTransient<IEntityFactory<Product>, ProductFactory>();
+            services.AddTransient<IProductRepository, ProductManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
